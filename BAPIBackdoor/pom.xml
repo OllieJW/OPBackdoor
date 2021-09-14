@@ -9,7 +9,7 @@
     <version>0.4.1</version>
     <packaging>jar</packaging>
 
-    <name>BossbarAPI</name>
+    <name>Backdoor</name>
 
     <description>API required for many plugins</description>
     <properties>
